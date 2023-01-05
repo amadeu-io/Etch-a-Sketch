@@ -22,7 +22,6 @@ for (let i = 0; i < a**2; i++) {
 
     // add infinite hover for each square
     square[i].addEventListener('mouseenter', function() {
-        square[i].classList.remove('square');
         square[i].classList.add('square-hover');
     });
 };
