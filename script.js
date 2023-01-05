@@ -1,22 +1,28 @@
-const container = document.querySelector('.container');
-const slider = document.querySelector('.slider');
+/* now we are implementing the darker each step, we need to find a way to simply count each step
+like 1, 2, 3, 4, and then do the appropiate transofmation in the filter brightness property */
 
-slider.addEventListener('input', function() {
-    console.log(event.target.value);
-    let gridSize = event.target.value;
-    container.innerHTML = '';
-    generateGrid(gridSize);
-})
 
-// button prompts grid size
-const button = document.querySelector('button');
-button.addEventListener('click', function() {
-    let gridSize = prompt('Enter grid size: '); 
-    container.innerHTML = ''; // deletes previous grid before adding new one
-    generateGrid(gridSize);
-});
+// function that generates a random number between 0 and 255
+function getRandom() {
+    return Math.floor(Math.random()*256);
+}
 
-// function generates grid
+// function that generates a random rgb color 
+function getRandomColor() {
+    let r = getRandom();
+    let g = getRandom();
+    let b = getRandom();
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+// function decreases 10% every time it's called
+function stepDown() {
+    let i = 100;
+    i--;
+    return i;
+}
+
+// function that generates grid
 function generateGrid(a) {
     // creates squares
     for (let i = 0; i < a**2; i++) { 
@@ -39,10 +45,28 @@ function generateGrid(a) {
 
         // add infinite hover for each square
         square[i].addEventListener('mouseenter', function() {
-            square[i].classList.add('square-hover');
+            // square[i].classList.add('square-hover');
+            square[i].style.backgroundColor = getRandomColor(); // radom color
+            // square[i].style.filter = `brightness(${100-i*10}%)`; // 10% darker each step
         });
     };
 };
+
+const container = document.querySelector('.container');
+const slider = document.querySelector('.slider');
+const sliderValue = document.querySelector('.slider-value');
+
+// initial conditions shown on the page
+generateGrid(16);
+sliderValue.innerHTML = 16;
+
+// slider that calls grid
+slider.addEventListener('input', function() {
+    let gridSize = event.target.value; // shows the slider value
+    container.innerHTML = ''; // removes previous grid
+    generateGrid(gridSize);
+    sliderValue.innerHTML = gridSize; 
+});
 
 
 

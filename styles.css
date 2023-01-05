@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body, .slider, .slider-value {
+    border: 1px solid black; /*testing*/
+}
+
 body {
     height: 99.7vh; /*makes body take up the whole vertical space*/
     border: 0px solid red; /*testing*/
@@ -25,8 +29,4 @@ body {
     border: 1px solid black;
     background-color: white;
     box-sizing: border-box; /*important: size of the div includes the border & padding*/
-}
-
-.square-hover {
-    background-color: black;
 }
