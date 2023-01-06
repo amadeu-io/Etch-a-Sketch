@@ -15,15 +15,11 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// function decreases 10% every time it's called
-function stepDown() {
-    let i = 100;
-    i--;
-    return i;
-}
-
 // function that generates grid
 function generateGrid(a) {
+    // removes previous grid
+    container.innerHTML = ''; 
+
     // creates squares
     for (let i = 0; i < a**2; i++) { 
         let square = document.createElement('div');
@@ -45,28 +41,45 @@ function generateGrid(a) {
 
         // add infinite hover for each square
         square[i].addEventListener('mouseenter', function() {
-            // square[i].classList.add('square-hover');
-            square[i].style.backgroundColor = getRandomColor(); // radom color
-            // square[i].style.filter = `brightness(${100-i*10}%)`; // 10% darker each step
+            square[i].style.backgroundColor = 'black'; // black color
+            square[i].style.backgroundColor = getRandomColor(); // random color
+            square[i].style.filter = `brightness(${
+                ((100-j*10) > 0) ? 100-j*10 : 0 // doesn't go below 0
+            }%)`; // 10% darker each step
+            j++;
         });
     };
 };
 
+
+// program starts here
 const container = document.querySelector('.container');
 const slider = document.querySelector('.slider');
 const sliderValue = document.querySelector('.slider-value');
+const reset = document.querySelector('.reset');
+console.log(slider.value);
 
-// initial conditions shown on the page
+
+// initial conditions
+let j = 0; // step counter
 generateGrid(16);
 sliderValue.innerHTML = 16;
 
+// reset button
+reset.addEventListener('click', function() {
+    j = 0;
+    generateGrid(16);
+    sliderValue.innerHTML = 16;
+});
+
 // slider that calls grid
 slider.addEventListener('input', function() {
-    let gridSize = event.target.value; // shows the slider value
-    container.innerHTML = ''; // removes previous grid
+    let gridSize = event.target.value; // shows the slider value (event.target = slider)
     generateGrid(gridSize);
     sliderValue.innerHTML = gridSize; 
 });
+
+console.log(gridSize);
 
 
 
