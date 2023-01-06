@@ -1,3 +1,6 @@
+/* this version of the program implements the get 10% darker at each step 
+capability */
+
 // function that generates a random number between 0 and 255
 function getRandom() {
     return Math.floor(Math.random()*256);
@@ -39,13 +42,19 @@ function generateGrid(a) {
         square[i].addEventListener('mouseenter', function() {
             square[i].style.backgroundColor = 'black'; // black color
             square[i].style.backgroundColor = getRandomColor(); // random color
+            square[i].style.filter = `brightness(${
+                ((100-j*10) > 0) ? 100-j*10 : 0 // doesn't go below 0
+            }%)`; // 10% darker each step
+            j++;
         });
     };
 
     // reset button
     reset.addEventListener('click', function() {
+        j = 0;
         for (let i = 0; i < a**2; i++) {
             square[i].style.backgroundColor = 'transparent';
+            square[i].style.filter = `brightness(100%)`;
         };
     });
 
@@ -58,6 +67,7 @@ const sliderValue = document.querySelector('.slider-value');
 const reset = document.querySelector('.reset');
 
 // initial conditions
+let j = 0; // step counter
 generateGrid(16);
 sliderValue.innerHTML = 16;
 
