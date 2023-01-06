@@ -57,8 +57,6 @@ const container = document.querySelector('.container');
 const slider = document.querySelector('.slider');
 const sliderValue = document.querySelector('.slider-value');
 const reset = document.querySelector('.reset');
-console.log(slider.value);
-
 
 // initial conditions
 let j = 0; // step counter
@@ -79,7 +77,6 @@ slider.addEventListener('input', function() {
     sliderValue.innerHTML = gridSize; 
 });
 
-console.log(gridSize);
 
 
 
