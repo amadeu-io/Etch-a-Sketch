@@ -35,12 +35,32 @@ function generateGrid(a) {
     for (let i = 0; i < a**2; i++) {
         Object.assign(square[i].style, squareSize); // add size to each square
 
-        // add infinite hover for each square
+        // by default, black paint
         square[i].addEventListener('mouseenter', function() {
-            square[i].style.backgroundColor = 'black'; // black color
-            square[i].style.backgroundColor = getRandomColor(); // random color
+            square[i].style.backgroundColor = 'black';
+        });
+
+        // rainbow toggle
+        rainbow.addEventListener('click', function() {
+
+            if (toggle) { // on
+                rainbow.classList.add('rainbow-toggle');
+                square[i].addEventListener('mouseenter', function() {
+                square[i].style.backgroundColor = getRandomColor(); // rainbowcolor
+                toggle = false;
+                });
+            } else { // off
+                rainbow.classList.remove('rainbow-toggle');
+                square[i].addEventListener('mouseenter', function() {
+                square[i].style.backgroundColor = 'black';
+                toggle = true;
+                });
+                
+            }
+
         });
     };
+    
 
     // reset button
     reset.addEventListener('click', function() {
@@ -56,10 +76,14 @@ const container = document.querySelector('.container');
 const slider = document.querySelector('.slider');
 const sliderValue = document.querySelector('.slider-value');
 const reset = document.querySelector('.reset');
+const black = document.querySelector('.black');
+const rainbow = document.querySelector('.rainbow');
 
 // initial conditions
 generateGrid(16);
 sliderValue.innerHTML = 16;
+let toggle = true;
+
 
 // slider that calls grid
 slider.addEventListener('input', function() {
