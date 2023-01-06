@@ -1,7 +1,3 @@
-/* now we are implementing the darker each step, we need to find a way to simply count each step
-like 1, 2, 3, 4, and then do the appropiate transofmation in the filter brightness property */
-
-
 // function that generates a random number between 0 and 255
 function getRandom() {
     return Math.floor(Math.random()*256);
@@ -15,7 +11,7 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// function that generates grid
+// function that generates an 'a' sized grid
 function generateGrid(a) {
     // removes previous grid
     container.innerHTML = ''; 
@@ -49,8 +45,17 @@ function generateGrid(a) {
             j++;
         });
     };
-};
 
+    // reset button
+    reset.addEventListener('click', function() {
+        j = 0;
+        for (let i = 0; i < a**2; i++) {
+            square[i].style.backgroundColor = 'transparent';
+            square[i].style.filter = `brightness(100%)`;
+        };
+    });
+
+};
 
 // program starts here
 const container = document.querySelector('.container');
@@ -63,22 +68,9 @@ let j = 0; // step counter
 generateGrid(16);
 sliderValue.innerHTML = 16;
 
-// reset button
-reset.addEventListener('click', function() {
-    j = 0;
-    generateGrid(16);
-    sliderValue.innerHTML = 16;
-});
-
 // slider that calls grid
 slider.addEventListener('input', function() {
     let gridSize = event.target.value; // shows the slider value (event.target = slider)
     generateGrid(gridSize);
     sliderValue.innerHTML = gridSize; 
 });
-
-
-
-
-
-
