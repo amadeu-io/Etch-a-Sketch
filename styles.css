@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body, .slider, .slider-value {
+body, .body, .title, .slider, .slider-value, .container, .credits, .menu  {
     border: 1px solid black; /*testing*/
 }
 
@@ -13,6 +13,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-value {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 

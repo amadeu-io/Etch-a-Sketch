@@ -81,7 +81,7 @@ const rainbow = document.querySelector('.rainbow');
 
 // initial conditions
 generateGrid(16);
-sliderValue.innerHTML = 16;
+sliderValue.innerHTML = `grid size: 16`;
 let toggle = true;
 
 
@@ -89,5 +89,5 @@ let toggle = true;
 slider.addEventListener('input', function() {
     let gridSize = event.target.value; // shows the slider value (event.target = slider)
     generateGrid(gridSize);
-    sliderValue.innerHTML = gridSize; 
+    sliderValue.innerHTML = `grid size: ${gridSize}`; 
 });
