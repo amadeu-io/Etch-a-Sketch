@@ -7,12 +7,10 @@ hovers over them
 
 The grid is made of div's that change style on hover. The grid size can be changed (2 up to 40 squares per side). The size of the divs adjusts depending on the grid size so the canvas they are contained in never changes
 
-The default paint is black
+Black is the default paint
 
 When the raibow toggle is on, each square gets painted in a random color. The rainbow toggle can 
 be turned off or back on at any time
-
-Font is PixelOperator by <a href='https://www.dafont.com/es/jayvee-d-enaguas.d2725'>Jayvee Enaguas</a>
 
 This was a heck of a JavaScript workout 🏋️
 
@@ -29,3 +27,5 @@ This was a heck of a JavaScript workout 🏋️
  - Laggy for higher grid sizes
 
 by nightrunner4
+
+Font is PixelOperator by <a href='https://www.dafont.com/es/jayvee-d-enaguas.d2725'>Jayvee Enaguas</a>
