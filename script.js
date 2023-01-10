@@ -65,7 +65,7 @@ function generateGrid(a) {
     // reset button
     reset.addEventListener('click', function() {
         for (let i = 0; i < a**2; i++) {
-            square[i].style.backgroundColor = 'transparent';
+            square[i].style.backgroundColor = 'white';
         };
     });
 
