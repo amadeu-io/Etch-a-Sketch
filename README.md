@@ -1,6 +1,6 @@
 Etch a Sketch web app ✏️
 
-[👉 Click here to see](https://nightrunner4.github.io/Etch-a-Sketch){:target="_blank"}
+<a href='https://nightrunner4.github.io/Etch-a-Sketch' target='_blank'>👉 Click here to see</a>
 
 The app consists of a blank grid made of squares that get painted when the cursor 
 hovers over them
@@ -12,14 +12,17 @@ The default paint is black
 When the raibow toggle is on, each square gets painted in a random color. The rainbow toggle can 
 be turned off or back on at any time
 
+Font is 
+
 This was a heck of a JavaScript workout 🏋️
 
-**Potential Improvements:** 💪
+<b>Potential Improvements:</b> 💪
 
  - Double click on grid size for manual add
  - Rainbow mode only shows maximum saturation colors
+ - Mobile compatible
 
-**Found Bugs:** 🪲
+<b>Found Bugs:</b> 🪲
 
  - Rainbow toggle automatically turns off if grid size is changed
  - It can be laggy for higher grid sizes
