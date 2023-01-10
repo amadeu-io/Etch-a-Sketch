@@ -1,19 +1,18 @@
 Etch a Sketch web app ✏️
 
-[👉 Click here to see.](https://nightrunner4.github.io/Etch-a-Sketch)
-
-This app is currently being developed.
+[👉 Click here to see](https://nightrunner4.github.io/Etch-a-Sketch)
 
 The app consists of a blank grid made of squares that get painted when the cursor 
 hovers over them.
 
-The grid is made of div's that change style on hover. The grid size can be changed by the user,
-from 2 up to 40, by default it is set to 16. For higher grid sizes, it's a little laggy. The size of the divs adjust depending on the grid size so the canvas they are contained in never changes size.
+The grid is made of div's that change style on hover. The grid size can be changed (2 up to 40 squares per side). The size of the divs adjust depending on the grid size so the canvas they are contained in never changes.
 
-By default, the paint color is black.
+The default paint is black.
 
-When the raibow toggle is on, each square gets painted in a random RGB color.The rainbow toggle can 
+When the raibow toggle is on, each square gets painted in a random color.The rainbow toggle can 
 be turned off or back on at any time.
+
+This was a heck of a JavaScript workout 🏋️
 
 **Potential Improvements:** 💪
 
@@ -23,5 +22,6 @@ be turned off or back on at any time.
 **Found Bugs:** 🪲
 
  - Rainbow toggle automatically turns off if grid size is changed
+ - It can be laggy for higher grid sizes
 
 by nightrunner4
