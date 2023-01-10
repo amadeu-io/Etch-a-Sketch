@@ -25,6 +25,7 @@ This was a heck of a JavaScript workout 🏋️
 <b>Found Bugs:</b> 🪲
 
  - Rainbow toggle automatically turns off if grid size is changed
- - It can be laggy for higher grid sizes
+ - Raingow toggle stops working if it's used without painting in between
+ - Laggy for higher grid sizes
 
 by nightrunner4
