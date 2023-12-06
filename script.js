@@ -3,7 +3,7 @@ function getRandom() {
     return Math.floor(Math.random()*256);
 }
 
-// function that generates a random rgb color 
+// function that generates a random rgb color
 function getRandomColor() {
     let r = getRandom();
     let g = getRandom();
@@ -14,10 +14,10 @@ function getRandomColor() {
 // function that generates an 'a' sized grid
 function generateGrid(a) {
     // removes previous grid
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     // creates squares
-    for (let i = 0; i < a**2; i++) { 
+    for (let i = 0; i < a**2; i++) {
         let square = document.createElement('div');
         square.classList.add('square');
         container.appendChild(square);
@@ -42,25 +42,27 @@ function generateGrid(a) {
 
         // rainbow toggle
         rainbow.addEventListener('click', function() {
-
+            console.log("click");
             if (toggle) { // on
                 rainbow.classList.add('rainbow-toggle');
                 square[i].addEventListener('mouseenter', function() {
-                square[i].style.backgroundColor = getRandomColor(); // rainbowcolor
+                    console.log("on");
+                    square[i].style.backgroundColor = getRandomColor(); // rainbowcolor
                 toggle = false;
                 });
             } else { // off
                 rainbow.classList.remove('rainbow-toggle');
                 square[i].addEventListener('mouseenter', function() {
-                square[i].style.backgroundColor = 'black';
+                    console.log("off");
+                    square[i].style.backgroundColor = 'black';
                 toggle = true;
                 });
-                
+
             }
 
         });
     };
-    
+
 
     // reset button
     reset.addEventListener('click', function() {
@@ -86,8 +88,9 @@ let toggle = true;
 
 
 // slider that calls grid
-slider.addEventListener('input', function() {
+slider.addEventListener('input', function(event) {
+    console.log(event);
     let gridSize = event.target.value; // shows the slider value (event.target = slider)
     generateGrid(gridSize);
-    sliderValue.innerHTML = `grid size: ${gridSize}`; 
+    sliderValue.innerHTML = `grid size: ${gridSize}`;
 });

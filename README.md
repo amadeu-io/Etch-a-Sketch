@@ -1,6 +1,6 @@
 Etch a Sketch web app ✏️
 
-<a href='https://nightrunner4.github.io/Etch-a-Sketch'>👉 Click here to see</a>
+<a href='https://amadeu-io.github.io/Etch-a-Sketch'>👉 Click here to see</a>
 
 The app consists of a blank grid made of squares that get painted when the cursor 
 hovers over them
@@ -26,6 +26,6 @@ This was a heck of a JavaScript workout 🏋️
  - Raingow toggle stops working if it's used without painting in between
  - Laggy for higher grid sizes
 
-by nightrunner4
+by amadeu-io
 
 Font is PixelOperator by <a href='https://www.dafont.com/es/jayvee-d-enaguas.d2725'>Jayvee Enaguas</a>
